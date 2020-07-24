@@ -21,7 +21,8 @@
     </bean>
 
     <bean id="musicPlayer"
-          class="ru.spring.test.MusicPlayer">
+          class="ru.spring.test.MusicPlayer"
+          scope="prototype">
         <!-- IoC via constructor -->
         <!--        <constructor-arg ref="musicBean"/>-->
         <property name="musicList">
