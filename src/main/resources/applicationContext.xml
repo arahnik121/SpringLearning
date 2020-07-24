@@ -1,19 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans  xmlns="http://www.springframework.org/schema/beans"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xmlns:context="http://www.springframework.org/schema/context"
-        xsi:schemaLocation="http://www.springframework.org/schema/beans
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context
-        http://www.springframework.org/schema/context/spring-context.xsd">
+        http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
+    <context:property-placeholder location="classpath:musicPlayer.properties"/>
 
-    <bean id="musicBean"
+
+    <bean id="musicBeanRap"
+          class="ru.spring.test.RapMusic">
+    </bean>
+    <bean id="musicBeanRock"
+          class="ru.spring.test.RockMusic">
+    </bean>
+    <bean id="musicBeanClassical"
           class="ru.spring.test.ClassicalMusic">
     </bean>
 
     <bean id="musicPlayer"
-    class="ru.spring.test.MusicPlayer">
-        <constructor-arg ref="musicBean"/>
+          class="ru.spring.test.MusicPlayer">
+        <!-- IoC via constructor -->
+        <!--        <constructor-arg ref="musicBean"/>-->
+        <property name="musicList">
+            <list>
+                <ref bean="musicBeanRap"/>
+                <ref bean="musicBeanRock"/>
+                <ref bean="musicBeanClassical"/>
+            </list>
+        </property>
+
+                <property name="name" value="Some name"/>
+                <property name="volume" value="50"/>
     </bean>
 
 </beans>
