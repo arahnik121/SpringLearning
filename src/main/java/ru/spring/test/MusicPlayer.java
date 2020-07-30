@@ -5,15 +5,19 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class MusicPlayer {
-    private ClassicalMusic classicalMusic;
+    private Music music;
+
+    @Autowired
+    public void setMusic(Music music) {
+        this.music = music;
+    }
 
     //IoC
-    @Autowired
-    public MusicPlayer(ClassicalMusic music) {
-        this.classicalMusic = music;
+    public MusicPlayer(Music music) {
+        this.music = music;
     }
 
     public void playMusic() {
-        System.out.println("Playing " + classicalMusic.getSong());
+        System.out.println("Playing: " + music.getSong());
     }
 }
