@@ -1,8 +1,13 @@
 package ru.spring.test;
 
-public class RapMusic implements Music{
+import java.util.ArrayList;
+import java.util.List;
+
+public class RapMusic implements Music {
+    private List<String> rapMusicList = new ArrayList<>();
+
     @Override
-    public String getSong() {
-        return "Rap God";
+    public List<String> getSongs() {
+        return rapMusicList;
     }
 }
