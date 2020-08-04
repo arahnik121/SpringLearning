@@ -1,12 +1,16 @@
-package ru.spring.test;
+package ru.spring.test.config;
 
 
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
+import ru.spring.test.Computer;
+import ru.spring.test.Music;
+import ru.spring.test.MusicPlayer;
+import ru.spring.test.genre.ClassicalMusic;
+import ru.spring.test.genre.RapMusic;
+import ru.spring.test.genre.RockMusic;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 

@@ -1,6 +1,7 @@
-package ru.spring.test;
+package ru.spring.test.genre;
 
 import org.springframework.stereotype.Component;
+import ru.spring.test.Music;
 
 //@Component
 public class RockMusic implements Music {

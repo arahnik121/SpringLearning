@@ -1,4 +1,4 @@
-package ru.spring.test;
+package ru.spring.test.genre;
 
 public enum MusicGenre {
     ROCK, CLASSICAL
