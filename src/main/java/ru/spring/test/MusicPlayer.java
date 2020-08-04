@@ -33,7 +33,7 @@ public class MusicPlayer {
 
     public String playMusic() {
         Random random = new Random();
-        int r = random.nextInt(musicList.size());
+        int r = random.nextInt(musicList.size() - 1);
         return "Playing: " + musicList.get(r).getSong();
     }
 }

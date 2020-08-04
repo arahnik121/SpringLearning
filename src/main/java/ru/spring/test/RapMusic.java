@@ -4,10 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RapMusic implements Music {
-    private List<String> rapMusicList = new ArrayList<>();
-
     @Override
-    public List<String> getSongs() {
-        return rapMusicList;
+    public String getSong() {
+        return "Rap God";
     }
 }
