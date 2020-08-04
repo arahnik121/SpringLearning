@@ -1,5 +1,7 @@
 package ru.spring.test;
 
+import java.util.List;
+
 public interface Music {
-    String getSong();
+    List<String> getSongs();
 }
